@@ -14,3 +14,34 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'member'], function (){
+
+    Route::get('/', 'MemberController@index');
+    Route::post('/login', 'MemberController@login');
+    Route::post('/register', 'MemberController@register');
+    Route::get('/profile/{id}', 'MemberController@profile');
+    Route::post('/extradetails/{id}', 'MemberController@extradetails');
+});
+
+Route::group(['prefix' => 'gymlocation'], function(){
+    Route::get('/', 'GymLocationController@index');
+    Route::get('/{id}', 'GymLocationController@gym');
+});
+
+Route::group(['prefix' => 'workoutsession'], function (){
+    Route::get('/{member_id}', 'WorkoutSessionController@membersessions');
+    Route::post('/add', 'WorkoutSessionController@addsession');
+});
+
+Route::group(['prefix' => 'gyminstructor'], function(){
+    Route::get('/', 'GymInstructorController@index');
+});
+
+Route::group(['prefix' => 'exercise'], function (){
+    Route::get('/', 'ExerciseController@index');
+});
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
