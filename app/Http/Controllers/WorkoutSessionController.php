@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\WorkOutSessionCollection;
-use App\Http\Resources\WorkOutSession as WorkOut;
+use App\Http\Resources\WorkOutSession as WorkOutResource;
 use App\Workoutsession;
 use Illuminate\Http\Request;
 
@@ -12,7 +12,7 @@ class WorkoutSessionController extends Controller
     public function membersessions($member_id){
         $sessions = Workoutsession::where('member', $member_id)->get();
 
-        return new WorkOutSessionCollection(WorkOut::collection($sessions));
+        return new WorkOutSessionCollection(WorkOutResource::collection($sessions));
     }
     public function addsession(Request $request){
         $date = $request['date'];
@@ -33,6 +33,6 @@ class WorkoutSessionController extends Controller
 
         $workoutsession->save();
 
-        return new WorkOut($workoutsession);
+        return new WorkOutResource($workoutsession);
     }
 }
