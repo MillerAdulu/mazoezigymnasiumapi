@@ -14,6 +14,16 @@ class GymLocation extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        $coordinates_array = explode(',', $this->coordinates);
+        return [
+            'id' => $this->id,
+            'location' => $this->location,
+            'opening_time' => $this->opening_time,
+            'closing_time' => $this->closing_time,
+            'coordinates' => [
+                'longitude' => $coordinates_array[0],
+                'latitude' => $coordinates_array[1]
+            ]
+        ];
     }
 }
