@@ -10,9 +10,11 @@ use Illuminate\Http\Request;
 class GymLocationController extends Controller
 {
     public function index(){
-        return null;
+        return new GymLocationCollection(GymLocationResource::collection(Gymlocation::all()));
     }
     public function gym($id){
+
         return new GymLocationResource(Gymlocation::findOrFail($id));
+
     }
 }
