@@ -2,7 +2,7 @@
     "name": "laravel/laravel",
     "description": "The Laravel Framework.",
     "keywords": [
-        "framework",
+        "framework","ext-gd": "*"
         "laravel"
     ],
     "license": "MIT",
@@ -64,5 +64,6 @@
             "type": "composer",
             "url": "https://larapack.io"
         }
-    }
+    },
+	"ext-gd": "*"
 }
