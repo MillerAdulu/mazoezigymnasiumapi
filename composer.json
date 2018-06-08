@@ -2,7 +2,7 @@
     "name": "laravel/laravel",
     "description": "The Laravel Framework.",
     "keywords": [
-        "framework","ext-gd": "*"
+        "framework",
         "laravel"
     ],
     "license": "MIT",
