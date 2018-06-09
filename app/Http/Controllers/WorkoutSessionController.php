@@ -6,6 +6,7 @@ use App\Http\Resources\WorkOutSessionCollection;
 use App\Http\Resources\WorkOutSession as WorkOutResource;
 use App\Workoutsession;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class WorkoutSessionController extends Controller
 {
@@ -15,7 +16,12 @@ class WorkoutSessionController extends Controller
         return new WorkOutSessionCollection(WorkOutResource::collection($sessions));
     }
     public function addsession(Request $request){
-        $date = $request['date'];
+        $year = $request['year'];
+        $month = $request['month'];
+        $day = $request['day'];
+
+        $date = Carbon::createFromDate($year, $month, $day);
+
         $location = $request['location'];
         $exercise_type = $request['exercise_type'];
         $reps = $request['reps'];
