@@ -34,6 +34,7 @@ class WorkOutSession extends JsonResource
         endforeach;
 
         return [
+'date' => $this->date,
             'exercise_type' => $exercise_type,
             'location' => $session_location,
             'sets' => $this->sets,
