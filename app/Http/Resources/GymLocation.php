@@ -20,10 +20,8 @@ class GymLocation extends JsonResource
             'location' => $this->location,
             'opening_time' => $this->opening_time,
             'closing_time' => $this->closing_time,
-            'coordinates' => [
-                'longitude' => $coordinates_array[0],
-                'latitude' => $coordinates_array[1]
-            ]
+            'longitude' => $coordinates_array[0],
+            'latitude' => $coordinates_array[1]
         ];
     }
 }
