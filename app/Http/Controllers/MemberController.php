@@ -46,7 +46,8 @@ class MemberController extends Controller
         return new MemberResource(Member::findOrFail($id));
     }
 
-    public function extradetails(Request $request, $id){
+    public function update(Request $request,){
+$id = $request['id'];
         $first_name = $request['first_name'];
         $last_name = $request['last_name'];
         $email = $request['email'];

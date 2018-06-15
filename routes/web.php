@@ -21,7 +21,7 @@ Route::group(['prefix' => 'member'], function (){
     Route::post('/login', 'MemberController@login');
     Route::post('/register', 'MemberController@register');
     Route::get('/profile/{id}', 'MemberController@profile');
-    Route::post('/extradetails/{id}', 'MemberController@extradetails');
+    Route::post('/update', 'MemberController@update');
 
 });
 
