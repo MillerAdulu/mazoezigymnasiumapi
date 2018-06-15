@@ -34,9 +34,7 @@ class Gymlocation extends Model
             $raw = '';
 
             foreach ($this->geometry as $column):
-
-                $raw .= ' AsText(' . $column .') as ' . $column . ' ';
-
+                $raw .= ' ST_AsText(' . $column .') as ' . $column . ' ';
             endforeach;
 
             return parent::newQuery($excludeDeleted)->addSelect('*', DB::raw($raw));
