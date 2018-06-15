@@ -35,7 +35,7 @@ class Gymlocation extends Model
 
             foreach ($this->geometry as $column):
 
-                $raw .= ' AsText(' . $column .') as ' . $column . ' ';
+                $raw .= ' asText(' . $column .') as ' . $column . ' ';
 
             endforeach;
 
