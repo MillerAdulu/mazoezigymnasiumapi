@@ -50,10 +50,8 @@ class MemberController extends Controller
         $id = $request['id'];
         $first_name = $request['first_name'];
         $last_name = $request['last_name'];
-        $email = $request['email'];
         $home = $request['home'];
         $age = $request['age'];
-        $gender = $request['gender'];
         $weight = $request['weight'];
         $target_weight = $request['target_weight'];
 
@@ -61,10 +59,8 @@ class MemberController extends Controller
 
         $member->first_name = $first_name;
         $member->last_name = $last_name;
-        $member->email = $email;
         $member->home = $home;
         $member->age = $age;
-        $member->gender = $gender;
         $member->weight = $weight;
         $member->target_weight = $target_weight;
 
