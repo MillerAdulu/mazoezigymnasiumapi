@@ -6,12 +6,26 @@
   use App\Http\Resources\MemberResource;
   use App\Member;
   use Illuminate\Http\Request;
+  use Illuminate\Support\Facades\Cache;
   use Illuminate\Support\Facades\Hash;
   
   class MemberController extends Controller
   {
     public function index(){
-      return new Members(MemberResource::collection(Member::all()));
+      
+      $members = Cache::remember(
+        'members',
+        60 * 24 * 7,
+        function () {
+          return Member::all();
+        }
+      );
+      
+      return new Members(
+        MemberResource::collection(
+          $members
+        )
+      );
     }
     
     public function login(Request $request){
@@ -47,7 +61,9 @@
     }
     
     public function profile($id){
-      return new MemberResource(Member::findOrFail($id));
+      return new MemberResource(
+        Member::findOrFail($id)
+      );
     }
     
     public function update(Request $request){
