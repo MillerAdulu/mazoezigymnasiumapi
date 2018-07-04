@@ -9,6 +9,10 @@ use App\Http\Resources\ExerciseCollection;
 class ExerciseController extends Controller
 {
     public function index(){
-        return new ExerciseCollection(ExerciseResource::collection(Exercise::all()));
+        return new ExerciseCollection(
+          ExerciseResource::collection(
+            Exercise::all()
+          )
+        );
     }
 }
