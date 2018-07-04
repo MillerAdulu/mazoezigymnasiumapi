@@ -14,6 +14,12 @@ class ExerciseResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+          'exerciseId' => $this->id,
+          'exerciseName' => $this->name,
+          'createdAt' => (string) $this->created_at,
+          'updatedAt' => (string) $this->updated_at,
+          'deletedAt' => (string) $this->deleted_at
+        ];
     }
 }
