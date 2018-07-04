@@ -6,7 +6,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 use App\Exercise;
 use App\Gymlocation;
 
-class WorkOutSession extends JsonResource
+class WorkOutSessionResource extends JsonResource
 {
     /**
      * Transform the resource into an array.

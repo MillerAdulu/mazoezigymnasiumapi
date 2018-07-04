@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\MembersCollection as Members;
-use App\Http\Resources\Member as MemberResource;
+use App\Http\Resources\MemberResource;
 use App\Member;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -21,7 +21,9 @@ class MemberController extends Controller
         $member = Member::where('email', $email)->firstOrFail();
 
         if(Hash::check($password, $member->password)){
-            return new MemberResource($member);
+            return new MemberResource(
+              $member
+            );
         }
         return null;
     }
@@ -39,7 +41,9 @@ class MemberController extends Controller
         $member->password = Hash::make($password);
         $member->save();
 
-        return new MemberResource($member);
+        return new MemberResource(
+          $member
+        );
     }
 
     public function profile($id){
@@ -66,6 +70,8 @@ class MemberController extends Controller
 
         $member->save();
 
-        return new MemberResource($member);
+        return new MemberResource(
+          $member
+        );
     }
 }
