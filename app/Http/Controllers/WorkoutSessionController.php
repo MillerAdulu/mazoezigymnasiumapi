@@ -11,7 +11,7 @@
   class WorkoutSessionController extends Controller
   {
     public function membersessions($member_id){
-      $sessions = Workoutsession::where('member', $member_id)->get();
+      $sessions = Workoutsession::where('member', $member_id)->orderBy('date', 'desc')->get();
       
       return new WorkOutSessionCollection(
         WorkOutSessionResource::collection(
