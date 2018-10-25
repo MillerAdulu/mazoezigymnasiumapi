@@ -22,12 +22,12 @@ This project was aimed at developing Android Mobile Development skills by making
 2. Rename the *.env.example* file to *.env*
 3. Run *composer install* in the directory. If you get errors, ensure to check that the required php extensions are installed and enabled on your server.
 4. Run *php artisan key:generate* in the directory to set the APP_KEY used by [Laravel](https://laravel.com/)
-6. Setup a Google Maps API and copy the API key into the *.env* file and set the central latitude and longitude appropriately.
-7. Upload the sample database provided to your server and set the database variables accordingly.
-8. Setup a [Laravel Voyager](https://docs.laravelvoyager.com) instance using these [instructions](https://docs.laravelvoyager.com/getting-started/installation).
-10. Run `php artisan serve` to launch the application.
-11. On the Laravel Voyager admin panel, add a few details as is fit.
-13. Close the second terminal and search away. :tada:
+5. Setup a Google Maps API and copy the API key into the *.env* file and set the central latitude and longitude appropriately.
+6. Upload the sample database provided to your server and set the database variables accordingly.
+7. Setup a [Laravel Voyager](https://docs.laravelvoyager.com) instance using these [instructions](https://docs.laravelvoyager.com/getting-started/installation).
+8. Run `php artisan serve` to launch the application.
+9. On the Laravel Voyager admin panel, add a few details as is fit.
+10. Close the second terminal and search away. :tada:
 
 ## Service Providers
 The live version of this API is on [Heroku](https://mazoezigymnasium.herokuapp.com/)
